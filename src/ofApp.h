@@ -26,4 +26,9 @@ class ofApp : public ofBaseApp{
 		
 		World * world;
 		Player* player;
+
+		bool leftKeyPressed;
+		bool rightKeyPressed;
+
+		ofPoint lastMousePosition;
 };

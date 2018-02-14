@@ -180,6 +180,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\Actor.h" />
+    <ClInclude Include="src\Config.h" />
     <ClInclude Include="src\ofApp.h" />
     <ClInclude Include="src\Player.h" />
     <ClInclude Include="src\Projectile.h" />

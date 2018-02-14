@@ -11,6 +11,8 @@ public:
 	void startFiring();
 	void stopFiring();
 
+	virtual void update();
+
 private:
 	void fireProjectile();
 
