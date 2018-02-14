@@ -10,14 +10,14 @@
     <ClCompile Include="src\Projectile.cpp">
       <Filter>src\Objects</Filter>
     </ClCompile>
-    <ClCompile Include="src\Player.cpp">
-      <Filter>src</Filter>
-    </ClCompile>
     <ClCompile Include="src\Actor.cpp">
       <Filter>src\Engine</Filter>
     </ClCompile>
     <ClCompile Include="src\World.cpp">
       <Filter>src\Engine</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Player.cpp">
+      <Filter>src\Objects</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -38,9 +38,6 @@
     <ClInclude Include="src\Projectile.h">
       <Filter>src\Objects</Filter>
     </ClInclude>
-    <ClInclude Include="src\Player.h">
-      <Filter>src</Filter>
-    </ClInclude>
     <ClInclude Include="src\Actor.h">
       <Filter>src\Engine</Filter>
     </ClInclude>
@@ -49,6 +46,9 @@
     </ClInclude>
     <ClInclude Include="src\Config.h">
       <Filter>src</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Player.h">
+      <Filter>src\Objects</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

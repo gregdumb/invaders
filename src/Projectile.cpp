@@ -1,5 +1,6 @@
 #include "Projectile.h"
 #include "World.h"
+#include "Config.h"
 
 
 Projectile::Projectile() {
@@ -15,7 +16,7 @@ Projectile::~Projectile()
 void Projectile::update() {
 	Actor::update();
 
-	location.y -= 500 * ofGetLastFrameTime();
+	location.y -= Config::playerProjectileSpeed * ofGetLastFrameTime();
 
 	//cout << "Location: " << location << endl;
 

@@ -16,10 +16,10 @@ void ofApp::setup() {
 
 //--------------------------------------------------------------
 void ofApp::update(){
-	if (leftKeyPressed) {
+	if (keys[OF_KEY_LEFT]) {
 		player->addLocation(ofPoint(-1 * Config::playerXSpeed * ofGetLastFrameTime(), 0));
 	}
-	else if (rightKeyPressed) {
+	else if (keys[OF_KEY_RIGHT]) {
 		player->addLocation(ofPoint(Config::playerXSpeed * ofGetLastFrameTime(), 0));
 	}
 }
@@ -36,7 +36,7 @@ void ofApp::draw(){
 
 //--------------------------------------------------------------
 void ofApp::keyPressed(int key){
-	if (key == GLFW_KEY_SPACE) {
+	if (key == GLFW_KEY_SPACE && !keys[GLFW_KEY_SPACE]) {
 		player->startFiring();
 	}
 
@@ -47,6 +47,8 @@ void ofApp::keyPressed(int key){
 	if (key == OF_KEY_RIGHT) {
 		rightKeyPressed = true;
 	}
+
+	keys[key] = true;
 }
 
 //--------------------------------------------------------------
@@ -58,6 +60,8 @@ void ofApp::keyReleased(int key) {
 	if (key == OF_KEY_RIGHT) {
 		rightKeyPressed = false;
 	}
+
+	keys[key] = false;
 }
 
 //--------------------------------------------------------------

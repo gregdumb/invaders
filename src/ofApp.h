@@ -31,4 +31,6 @@ class ofApp : public ofBaseApp{
 		bool rightKeyPressed;
 
 		ofPoint lastMousePosition;
+
+		map<int, bool> keys;
 };
