@@ -1,4 +1,6 @@
 #include "ofApp.h"
+#include <cstdint>
+#include <algorithm>
 
 //--------------------------------------------------------------
 void ofApp::setup() {

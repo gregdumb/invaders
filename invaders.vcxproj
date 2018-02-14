@@ -172,14 +172,14 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="src\main.cpp" />
-    <ClCompile Include="src\Object.cpp" />
+    <ClCompile Include="src\Actor.cpp" />
     <ClCompile Include="src\ofApp.cpp" />
     <ClCompile Include="src\Player.cpp" />
     <ClCompile Include="src\Projectile.cpp" />
     <ClCompile Include="src\World.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="src\Object.h" />
+    <ClInclude Include="src\Actor.h" />
     <ClInclude Include="src\ofApp.h" />
     <ClInclude Include="src\Player.h" />
     <ClInclude Include="src\Projectile.h" />

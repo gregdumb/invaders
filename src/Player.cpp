@@ -3,7 +3,7 @@
 #include "Projectile.h"
 
 
-Player::Player() :Object("ship.png") {
+Player::Player() :Actor("ship.png") {
 	
 	name = "Player";
 	imageName = "ship.png";
@@ -19,7 +19,7 @@ void Player::startFiring() {
 
 void Player::fireProjectile() {
 	if (world) {
-		Object* projectile = world->addObject(new Projectile());
+		Actor* projectile = world->addObject(new Projectile());
 		projectile->setLocation(this->location);
 	}
 }

@@ -18,18 +18,18 @@ void World::draw() {
 
 	deltaTime = ofGetLastFrameTime();
 
- 	for (Object* obj : toDelete) {
+ 	for (Actor* obj : toDelete) {
 		unsafeDeleteObject(obj);
 	}
 
-	for (Object* obj : toAdd) {
+	for (Actor* obj : toAdd) {
 		unsafeAddObject(obj);
 	}
 
 	toDelete.clear();
 	toAdd.clear();
 
-	for (Object* obj : scene) {
+	for (Actor* obj : scene) {
 		if (obj != nullptr) {
 			obj->update();
 			obj->draw();
@@ -40,12 +40,12 @@ void World::draw() {
 // **********************************************
 // ** Adding Objects
 
-Object* World::addObject(Object* newObject) {
+Actor* World::addObject(Actor* newObject) {
 	toAdd.push_back(newObject);
 	return newObject;
 }
 
-Object* World::unsafeAddObject(Object* newObject) {
+Actor* World::unsafeAddObject(Actor* newObject) {
 
 	if (std::find(scene.begin(), scene.end(), newObject) == scene.end()) {
 		newObject->setWorld(this);
@@ -61,11 +61,11 @@ Object* World::unsafeAddObject(Object* newObject) {
 // **********************************************
 // ** Deleting Objects
 
-void World::deleteObject(Object* toRemove) {
+void World::deleteObject(Actor* toRemove) {
 	toDelete.push_back(toRemove);
 }
 
-bool World::unsafeDeleteObject(Object* toRemove) {
+bool World::unsafeDeleteObject(Actor* toRemove) {
 	// Get index
 	ptrdiff_t index = std::find(scene.begin(), scene.end(), toRemove) - scene.begin();
 

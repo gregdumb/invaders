@@ -1,8 +1,8 @@
 #pragma once
-#include "Object.h"
+#include "Actor.h"
 
 class Player :
-	public Object
+	public Actor
 {
 public:
 	Player();

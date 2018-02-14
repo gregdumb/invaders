@@ -1,7 +1,7 @@
 #pragma once
 
 #include "ofMain.h"
-#include "Object.h"
+#include "Actor.h"
 
 class World {
 public:
@@ -12,29 +12,29 @@ public:
 	void draw();
 
 	// Adds an object to the scene for rendering
-	Object* addObject(Object*);
+	Actor* addObject(Actor*);
 
 	// Removes an object from the scene and deletes it
-	void deleteObject(Object*);
+	void deleteObject(Actor*);
 
 	// Get time between frames
 	float getDeltaTime();
 
 private:
 	// Holds all the objects we need to render
-	vector<Object*> scene;
+	vector<Actor*> scene;
 
 	// Objects scheduled for addition
-	vector<Object*> toAdd;
+	vector<Actor*> toAdd;
 
 	// Objects scheduled for deletion
-	vector<Object*> toDelete;
+	vector<Actor*> toDelete;
 
 	// Immediately adds an object from the scene
-	Object* unsafeAddObject(Object*);
+	Actor* unsafeAddObject(Actor*);
 
 	// Immediately removes an object from the scene
-	bool unsafeDeleteObject(Object*);
+	bool unsafeDeleteObject(Actor*);
 
 	// Time between frames
 	float deltaTime;

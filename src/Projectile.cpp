@@ -13,7 +13,7 @@ Projectile::~Projectile()
 }
 
 void Projectile::update() {
-	Object::update();
+	Actor::update();
 
 	location.y -= 500 * ofGetLastFrameTime();
 
