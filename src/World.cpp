@@ -7,6 +7,7 @@
 World::World() {
 	std::cout << "World initialized" << std::endl;
 
+	ofBackground(ofColor(42, 4, 64));
 }
 
 // **********************************************
@@ -14,7 +15,7 @@ World::World() {
 
 void World::draw() {
 
-	cout << "Scene length " << scene.size() << endl;
+	//cout << "Scene length " << scene.size() << endl;
 
 	deltaTime = ofGetLastFrameTime();
 
@@ -29,11 +30,35 @@ void World::draw() {
 	toDelete.clear();
 	toAdd.clear();
 
+	updateCollision();
+
 	for (Actor* obj : scene) {
 		if (obj != nullptr) {
 			obj->update();
+		}
+	}
+
+	for (Actor* obj : scene) {
+		if (obj != nullptr) {
 			obj->draw();
 		}
+	}
+}
+
+void World::updateCollision() {
+
+	for (Actor* obj1 : scene) {
+		if (obj1->hasCollision) {
+			for (Actor* obj2 : scene) {
+				if (obj1 != obj2 &&
+					obj1->overlaps(obj2->getLocation()) &&
+					obj2->hasCollision) {
+
+					obj1->collide(obj2);
+				}
+			}
+		}
+		
 	}
 }
 

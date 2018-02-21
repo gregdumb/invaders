@@ -5,12 +5,14 @@
 
 Projectile::Projectile() {
 	setImage("projectile.png");
+	name = "Projectile";
 	cout << "Projectile spawned" << endl;
+
+	hasCollision = true;
 }
 
 
-Projectile::~Projectile()
-{
+Projectile::~Projectile() {
 }
 
 void Projectile::update() {

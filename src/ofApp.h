@@ -4,8 +4,9 @@
 
 #include "World.h"
 #include "Player.h"
+#include "Enemy.h"
 
-class ofApp : public ofBaseApp{
+class ofApp : public ofBaseApp {
 
 	public:
 		void setup();
@@ -27,10 +28,9 @@ class ofApp : public ofBaseApp{
 		World * world;
 		Player* player;
 
-		bool leftKeyPressed;
-		bool rightKeyPressed;
-
 		ofPoint lastMousePosition;
 
 		map<int, bool> keys;
+
+		float lastStarSpawnTime;
 };

@@ -7,6 +7,8 @@ Player::Player() :Actor("ship.png") {
 	
 	name = "Player";
 	imageName = "ship.png";
+
+	hasCollision = true;
 }
 
 Player::~Player() {

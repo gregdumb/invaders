@@ -34,6 +34,13 @@ public:
 	// Get the object's velocity
 	ofPoint getVelocity();
 
+	// Should other things collide with this object
+	bool hasCollision;
+
+	virtual void collide(Actor*);
+
+	bool overlaps(ofPoint);
+
 protected:
 	// Reference to the world
 	World* world;

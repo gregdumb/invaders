@@ -11,6 +11,8 @@ Actor::Actor() {
 	location = ofPoint(0, 0);
 	lastFrameLocation = location;
 	rotation = 0.f;
+
+	hasCollision = false;
 }
 
 Actor::Actor(string img) :Actor() {
@@ -94,4 +96,26 @@ void Actor::updateVelocity() {
 
 ofPoint Actor::getVelocity() {
 	return velocity;
+}
+
+// **********************************************
+// ** Collision
+
+bool Actor::overlaps(ofPoint point) {
+	if (sprite.isAllocated()) {
+		int spriteX = sprite.getWidth();
+		int spriteY = sprite.getHeight();
+		// Create bounding rectangle
+		ofRectangle bounds = ofRectangle(location.x - spriteX / 2, location.y - spriteY / 2, spriteX, spriteY);
+		//bounds.set(ofPoint(location.x - spriteX / 2, location.y - spriteY / 2), spriteX, spriteY);
+		//ofSetColor(0, 0, 255);
+		//ofDrawRectangle(bounds);
+		return bounds.inside(point);
+	}
+
+	return false;
+}
+
+void Actor::collide(Actor* hit) {
+	cout << "Collision happened to " << name << endl;
 }

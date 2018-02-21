@@ -11,6 +11,8 @@ public:
 	// Called every frame, draws all objects in the scene
 	void draw();
 
+	void updateCollision();
+
 	// Adds an object to the scene for rendering
 	Actor* addObject(Actor*);
 
