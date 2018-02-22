@@ -3,7 +3,7 @@
 
 
 Enemy::Enemy() {
-	setImage("enemy.png");
+	setImage("textures/enemy.png");
 	name = "Enemy";
 
 	hasCollision = true;
@@ -14,7 +14,6 @@ Enemy::~Enemy() {
 }
 
 void Enemy::update() {
-
 }
 
 void Enemy::collide(Actor* obj) {

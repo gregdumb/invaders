@@ -8,7 +8,6 @@ class Actor
 {
 public:
 	Actor();
-	Actor(string);
 	~Actor();
 
 	virtual void draw();
@@ -55,9 +54,6 @@ protected:
 	float rotation;
 
 	ofImage sprite;
-
-	// Path to image for this object's sprite
-	string imageName;
 
 private:
 	// Place we were last frame, used to calculate velocity

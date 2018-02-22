@@ -14,30 +14,33 @@ World::World() {
 // ** Tick
 
 void World::draw() {
-
-	//cout << "Scene length " << scene.size() << endl;
-
+	// DeltaTime
 	deltaTime = ofGetLastFrameTime();
 
+	// Remove objects scheduled for deletion
  	for (Actor* obj : toDelete) {
 		unsafeDeleteObject(obj);
 	}
 
+	// Add objects scheduled for addition
 	for (Actor* obj : toAdd) {
 		unsafeAddObject(obj);
 	}
 
+	// Clear addition/deletion queues
 	toDelete.clear();
 	toAdd.clear();
 
 	updateCollision();
 
+	// Update
 	for (Actor* obj : scene) {
 		if (obj != nullptr) {
 			obj->update();
 		}
 	}
 
+	// Draw
 	for (Actor* obj : scene) {
 		if (obj != nullptr) {
 			obj->draw();
@@ -58,7 +61,6 @@ void World::updateCollision() {
 				}
 			}
 		}
-		
 	}
 }
 

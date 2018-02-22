@@ -4,10 +4,8 @@
 
 
 Projectile::Projectile() {
-	setImage("projectile.png");
+	setImage("textures/projectile.png");
 	name = "Projectile";
-	cout << "Projectile spawned" << endl;
-
 	hasCollision = true;
 }
 
@@ -20,10 +18,7 @@ void Projectile::update() {
 
 	location.y -= Config::playerProjectileSpeed * ofGetLastFrameTime();
 
-	//cout << "Location: " << location << endl;
-
 	if (location.y < 50) {
 		world->deleteObject(this);
-		cout << "Projectile deleted" << endl;
 	}
 }

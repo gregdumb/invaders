@@ -15,17 +15,26 @@ void ofApp::setup() {
 	player->setLocation(ofPoint(ofGetViewportWidth() * 0.5, ofGetViewportHeight() - Config::playerYOffset));
 
 	// Spawn test enemy
-	for (int i = 1; i <= 5; i++) {
+	for (int i = 1; i <= 4; i++) {
 		Enemy* enemy = (Enemy*) world->addObject(new Enemy());
 		enemy->setLocation(ofPoint(200 * i, 300));
 	}
 
 	// Spawn some stars
 	lastStarSpawnTime = 0;
+	for(int i = 0; i < 40; i++) {
+		float xPos = ofRandom(ofGetViewportWidth());
+		float yPos = ofRandom(ofGetViewportHeight());
+		float speed = Config::playerYSpeed - ofRandom(100);
+
+		Star* star = (Star*)world->addObject(new Star(speed));
+		star->setLocation(ofPoint(xPos, yPos));
+	}
 }
 
 //--------------------------------------------------------------
 void ofApp::update() {
+	// Move player
 	if (keys[OF_KEY_LEFT]) {
 		player->addLocation(ofPoint(-1 * Config::playerXSpeed * ofGetLastFrameTime(), 0));
 	}
@@ -34,18 +43,17 @@ void ofApp::update() {
 	}
 
 	float now = ofGetElapsedTimef();
-	float interval = 0.05;
+	float interval = 0.1;
 
+	// Stars
 	if (now > lastStarSpawnTime + interval) {
 		lastStarSpawnTime = now;
 		float xPos = ofRandom(ofGetViewportWidth());
 		float speed = Config::playerYSpeed - ofRandom(100);
-		cout << ofRandom(1) << endl;
 
 		Star* star = (Star*)world->addObject(new Star(speed));
 		star->setLocation(ofPoint(xPos, 0));
 	}
-
 }
 
 //--------------------------------------------------------------
@@ -78,7 +86,6 @@ void ofApp::mouseMoved(int x, int y ) {
 	player->addLocation(ofPoint(deltaX, 0));
 
 	lastMousePosition = ofPoint(x, y);
-	
 }
 
 //--------------------------------------------------------------

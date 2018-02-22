@@ -3,19 +3,19 @@
 #include "Projectile.h"
 
 
-Player::Player() :Actor("ship.png") {
-	
+Player::Player() {
 	name = "Player";
-	imageName = "ship.png";
-
+	setImage("textures/ship.png");
 	hasCollision = true;
+
+	fireSoundPlayer.setVolume(0.5);
+	fireSoundPlayer.load("sounds/laser_1.wav");
 }
 
 Player::~Player() {
 }
 
 void Player::startFiring() {
-
 	fireProjectile();
 }
 
@@ -23,6 +23,7 @@ void Player::fireProjectile() {
 	if (world) {
 		Actor* projectile = world->addObject(new Projectile());
 		projectile->setLocation(this->location);
+		fireSoundPlayer.play();
 	}
 }
 

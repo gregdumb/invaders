@@ -13,6 +13,6 @@ public:
 
 private:
 	void fireProjectile();
-
+	ofSoundPlayer fireSoundPlayer;
 };
 

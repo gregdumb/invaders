@@ -15,14 +15,6 @@ Actor::Actor() {
 	hasCollision = false;
 }
 
-Actor::Actor(string img) :Actor() {
-	
-	// Initialize sprite
-	if (img.length() > 0) {
-		setImage(img);
-	}
-}
-
 Actor::~Actor() {
 }
 
@@ -31,7 +23,6 @@ void Actor::setWorld(World* newWorld) {
 }
 
 void Actor::setImage(string path) {
-	imageName = path;
 	sprite.loadImage(path);
 }
 
@@ -107,9 +98,6 @@ bool Actor::overlaps(ofPoint point) {
 		int spriteY = sprite.getHeight();
 		// Create bounding rectangle
 		ofRectangle bounds = ofRectangle(location.x - spriteX / 2, location.y - spriteY / 2, spriteX, spriteY);
-		//bounds.set(ofPoint(location.x - spriteX / 2, location.y - spriteY / 2), spriteX, spriteY);
-		//ofSetColor(0, 0, 255);
-		//ofDrawRectangle(bounds);
 		return bounds.inside(point);
 	}
 

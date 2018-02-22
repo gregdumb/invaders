@@ -7,7 +7,6 @@ Star::Star(float speed) {
 	this->speed = speed;
 }
 
-
 Star::~Star() {
 }
 

@@ -1,5 +1,9 @@
 #pragma once
 
+/**
+* Global game config variables
+*/
+
 class Config {
 public:
 
