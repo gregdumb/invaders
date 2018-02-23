@@ -35,6 +35,8 @@ xcuserdata
 
 # Code::Blocks
 *.depend
+*.zip
+
 *.layout
 
 # Visual Studio

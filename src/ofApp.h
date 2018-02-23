@@ -5,6 +5,7 @@
 #include "World.h"
 #include "Player.h"
 #include "Enemy.h"
+#include "Timer.h"
 
 class ofApp : public ofBaseApp {
 

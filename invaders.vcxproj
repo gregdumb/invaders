@@ -178,6 +178,8 @@
     <ClCompile Include="src\Player.cpp" />
     <ClCompile Include="src\Projectile.cpp" />
     <ClCompile Include="src\Star.cpp" />
+    <ClCompile Include="src\Timer.cpp" />
+    <ClCompile Include="src\TimerTask.cpp" />
     <ClCompile Include="src\World.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -188,6 +190,8 @@
     <ClInclude Include="src\Player.h" />
     <ClInclude Include="src\Projectile.h" />
     <ClInclude Include="src\Star.h" />
+    <ClInclude Include="src\Timer.h" />
+    <ClInclude Include="src\TimerTask.h" />
     <ClInclude Include="src\World.h" />
   </ItemGroup>
   <ItemGroup>

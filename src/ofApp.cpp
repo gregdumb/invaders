@@ -30,6 +30,10 @@ void ofApp::setup() {
 		Star* star = (Star*)world->addObject(new Star(speed));
 		star->setLocation(ofPoint(xPos, yPos));
 	}
+
+	// Timer testing
+	Timer* timer = new Timer();
+	timer->update();
 }
 
 //--------------------------------------------------------------
@@ -75,6 +79,10 @@ void ofApp::keyPressed(int key) {
 
 //--------------------------------------------------------------
 void ofApp::keyReleased(int key) {
+
+	if (key == GLFW_KEY_SPACE && keys[GLFW_KEY_SPACE]) {
+		player->stopFiring();
+	}
 
 	keys[key] = false;
 }

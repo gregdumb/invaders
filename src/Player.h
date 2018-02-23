@@ -1,5 +1,6 @@
 #pragma once
 #include "Actor.h"
+#include "Timer.h"
 
 class Player : public Actor {
 public:
@@ -14,5 +15,8 @@ public:
 private:
 	void fireProjectile();
 	ofSoundPlayer fireSoundPlayer;
+
+	Timer* timer;
+	TimerTask* fireTask;
 };
 

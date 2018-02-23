@@ -15,6 +15,6 @@ public:
 	const static int playerYSpeed = 200; // This one just controls the speed of stars in the background
 
 	// Speed of projectiles
-	const static int playerProjectileSpeed = 500;
+	const static int playerProjectileSpeed = 800;
 
 };
