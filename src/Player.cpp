@@ -30,8 +30,10 @@ void Player::stopFiring() {
 
 void Player::fireProjectile() {
 	if (world) {
-		Actor* projectile = world->addObject(new Projectile());
-		projectile->setLocation(this->location);
+		Actor* projectileR = world->addObject(new Projectile());
+		Actor* projectileL = world->addObject(new Projectile());
+		projectileR->setLocation(this->location + ofPoint(45, 0));
+		projectileL->setLocation(this->location + ofPoint(-45, 0));
 		fireSoundPlayer.play();
 	}
 }
