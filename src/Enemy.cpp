@@ -14,6 +14,7 @@ Enemy::~Enemy() {
 }
 
 void Enemy::update() {
+	Actor::update();
 }
 
 void Enemy::collide(Actor* obj) {

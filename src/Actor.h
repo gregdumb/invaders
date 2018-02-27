@@ -33,6 +33,8 @@ public:
 	// Get the object's velocity
 	ofPoint getVelocity();
 
+	void setVelocity(float, float);
+
 	// Should other things collide with this object
 	bool hasCollision;
 

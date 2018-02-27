@@ -18,6 +18,7 @@ void ofApp::setup() {
 	for (int i = 1; i <= 4; i++) {
 		Enemy* enemy = (Enemy*) world->addObject(new Enemy());
 		enemy->setLocation(ofPoint(200 * i, 300));
+		enemy->setVelocity(100, 0);
 	}
 
 	// Spawn some stars

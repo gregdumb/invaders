@@ -85,9 +85,14 @@ float Actor::addRotation(float deltaRotation) {
 // ** Velocity
 
 void Actor::updateVelocity() {
-	ofPoint deltaLoc = location - lastFrameLocation;
-	velocity = deltaLoc / ofGetLastFrameTime();
-	lastFrameLocation = location;
+	//ofPoint deltaLoc = location - lastFrameLocation;
+	//velocity = deltaLoc / ofGetLastFrameTime();
+	//lastFrameLocation = location;
+	location += velocity * ofGetLastFrameTime();
+}
+
+void Actor::setVelocity(float x, float y) {
+	velocity = ofPoint(x, y);
 }
 
 ofPoint Actor::getVelocity() {
