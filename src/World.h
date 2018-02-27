@@ -22,6 +22,9 @@ public:
 	// Get time between frames
 	float getDeltaTime();
 
+	// Log scene contents to console
+	void logScene();
+
 private:
 	// Holds all the objects we need to render
 	vector<Actor*> scene;

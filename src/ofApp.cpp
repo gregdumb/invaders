@@ -74,6 +74,10 @@ void ofApp::keyPressed(int key) {
 		player->startFiring();
 	}
 
+	if (key == OF_KEY_CONTROL) {
+		world->logScene();
+	}
+
 	keys[key] = true;
 }
 

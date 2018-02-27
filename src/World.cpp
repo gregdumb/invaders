@@ -10,6 +10,13 @@ World::World() {
 	ofBackground(ofColor(42, 4, 64));
 }
 
+void World::logScene() {
+	cout << "***** SCENE *****" << endl;
+	for (Actor* a : scene) {
+		cout << a->zDepth << " " << a->getName() << endl;
+	}
+}
+
 // **********************************************
 // ** Tick
 
@@ -68,6 +75,7 @@ void World::updateCollision() {
 // ** Adding Objects
 
 Actor* World::addObject(Actor* newObject) {
+	
 	toAdd.push_back(newObject);
 	return newObject;
 }
@@ -77,6 +85,12 @@ Actor* World::unsafeAddObject(Actor* newObject) {
 	if (std::find(scene.begin(), scene.end(), newObject) == scene.end()) {
 		newObject->setWorld(this);
 		scene.push_back(newObject);
+
+		// Sort according to zDepth
+		sort(scene.begin(), scene.end(), [](const Actor* lhs, const Actor* rhs) {
+			return lhs->zDepth < rhs->zDepth;
+		});
+
 		return newObject;
 	}
 	else {

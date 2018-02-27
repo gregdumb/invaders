@@ -40,6 +40,11 @@ public:
 
 	bool overlaps(ofPoint);
 
+	// Depth to render at
+	int zDepth;
+
+	string getName();
+
 protected:
 	// Reference to the world
 	World* world;

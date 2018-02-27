@@ -13,6 +13,7 @@ Actor::Actor() {
 	rotation = 0.f;
 
 	hasCollision = false;
+	zDepth = 1;
 }
 
 Actor::~Actor() {
@@ -24,6 +25,10 @@ void Actor::setWorld(World* newWorld) {
 
 void Actor::setImage(string path) {
 	sprite.loadImage(path);
+}
+
+string Actor::getName() {
+	return name;
 }
 
 // **********************************************

@@ -5,6 +5,8 @@
 
 Star::Star(float speed) {
 	this->speed = speed;
+	name = "Star";
+	zDepth = 0;
 }
 
 Star::~Star() {
