@@ -1,5 +1,6 @@
 
 #include "World.h"
+#include "Timer.h"
 
 // **********************************************
 // ** Constructors & Initialization
@@ -8,6 +9,8 @@ World::World() {
 	std::cout << "World initialized" << std::endl;
 
 	ofBackground(ofColor(42, 4, 64));
+
+	timer = new Timer();
 }
 
 void World::logScene() {
@@ -39,6 +42,7 @@ void World::draw() {
 	toAdd.clear();
 
 	updateCollision();
+	timer->update();
 
 	// Update
 	for (Actor* obj : scene) {

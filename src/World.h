@@ -3,6 +3,8 @@
 #include "ofMain.h"
 #include "Actor.h"
 
+class Timer;
+
 class World {
 public:
 	World();
@@ -24,6 +26,8 @@ public:
 
 	// Log scene contents to console
 	void logScene();
+
+	Timer* timer;
 
 private:
 	// Holds all the objects we need to render

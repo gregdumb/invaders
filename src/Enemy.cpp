@@ -15,10 +15,14 @@ Enemy::~Enemy() {
 
 void Enemy::update() {
 	Actor::update();
+
+	if (location.y > ofGetViewportHeight() - 50) {
+		world->deleteObject(this);
+	}
 }
 
 void Enemy::collide(Actor* obj) {
-	if (obj && world) {
+	if (obj && world && obj->getName() == "Projectile") {
 		world->deleteObject(this);
 		world->deleteObject(obj);
 	}

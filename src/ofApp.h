@@ -6,6 +6,7 @@
 #include "Player.h"
 #include "Enemy.h"
 #include "Timer.h"
+#include "EnemySpawn.h"
 
 class ofApp : public ofBaseApp {
 

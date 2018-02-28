@@ -31,6 +31,9 @@
     <ClCompile Include="src\TimerTask.cpp">
       <Filter>src\Engine</Filter>
     </ClCompile>
+    <ClCompile Include="src\EnemySpawn.cpp">
+      <Filter>src\Objects</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="src">
@@ -73,6 +76,9 @@
     </ClInclude>
     <ClInclude Include="src\TimerTask.h">
       <Filter>src\Engine</Filter>
+    </ClInclude>
+    <ClInclude Include="src\EnemySpawn.h">
+      <Filter>src\Objects</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

@@ -7,6 +7,7 @@ Player::Player() {
 	name = "Player";
 	setImage("textures/ship.png");
 	hasCollision = true;
+	zDepth = 3;
 
 	fireSoundPlayer.setVolume(0.5);
 	fireSoundPlayer.load("sounds/laser_1.wav");
