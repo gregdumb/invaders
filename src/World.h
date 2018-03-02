@@ -5,6 +5,9 @@
 
 class Timer;
 
+// World
+// Manages and draws the scene
+//
 class World {
 public:
 	World();

@@ -4,6 +4,9 @@
 
 class World;
 
+// Actor
+// An element with a bitmapped sprite that can be placed in the world
+//
 class Actor
 {
 public:

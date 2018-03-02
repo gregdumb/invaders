@@ -5,6 +5,9 @@
 
 class Actor;
 
+// Timer
+// Runs TimerTasks at their proper intervals
+//
 class Timer {
 public:
 	Timer();
