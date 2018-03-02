@@ -186,6 +186,7 @@
   <ItemGroup>
     <ClInclude Include="src\Actor.h" />
     <ClInclude Include="src\Config.h" />
+    <ClInclude Include="src\Emitter.h" />
     <ClInclude Include="src\Enemy.h" />
     <ClInclude Include="src\EnemySpawn.h" />
     <ClInclude Include="src\ofApp.h" />

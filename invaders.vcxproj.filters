@@ -80,6 +80,9 @@
     <ClInclude Include="src\EnemySpawn.h">
       <Filter>src\Objects</Filter>
     </ClInclude>
+    <ClInclude Include="src\Emitter.h">
+      <Filter>src\Engine</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="icon.rc" />
