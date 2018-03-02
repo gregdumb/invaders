@@ -21,10 +21,6 @@ void Timer::update() {
 	}
 }
 
-void Timer::timerTest() {
-	cout << "Private timer function test called" << endl;
-}
-
 TimerTask* Timer::createTask(std::function<void()> newFunction, float interval) {
 	TimerTask* newTask = new TimerTask(newFunction, interval);
 	tasks.push_back(newTask);

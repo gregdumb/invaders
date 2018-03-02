@@ -23,7 +23,7 @@ void EnemySpawn::spawnEnemy() {
 	int randX = ofRandom(ofGetViewportWidth());
 	int randV = ofRandomf() * 50;
 	newEnemy->setVelocity(randV, 200);
-	newEnemy->setLocation(ofPoint(randX, 100));
+	newEnemy->setLocation(ofPoint(randX, -100));
 
 	world->addObject(newEnemy);
 }

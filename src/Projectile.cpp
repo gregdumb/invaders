@@ -18,9 +18,13 @@ Projectile::~Projectile() {
 void Projectile::update() {
 	Actor::update();
 
-	//location.y -= Config::playerProjectileSpeed * ofGetLastFrameTime();
-
 	if (location.y < 50) {
+		world->deleteObject(this);
+	}
+}
+
+void Projectile::collide(Actor* obj) {
+	if (obj && world && obj->getName() == "Enemy") {
 		world->deleteObject(this);
 	}
 }

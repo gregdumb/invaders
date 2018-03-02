@@ -14,13 +14,6 @@ void ofApp::setup() {
 	player = (Player*) world->addObject(new Player());
 	player->setLocation(ofPoint(ofGetViewportWidth() * 0.5, ofGetViewportHeight() - Config::playerYOffset));
 
-	// Spawn test enemy
-	for (int i = 1; i <= 4; i++) {
-		//Enemy* enemy = (Enemy*) world->addObject(new Enemy());
-		//enemy->setLocation(ofPoint(200 * i, 300));
-		//enemy->setVelocity(100, 0);
-	}
-
 	// Automated enemy spawning
 	EnemySpawn* spawn = new EnemySpawn();
 	spawn->setWorld(world);
@@ -36,10 +29,6 @@ void ofApp::setup() {
 		Star* star = (Star*)world->addObject(new Star(speed));
 		star->setLocation(ofPoint(xPos, yPos));
 	}
-
-	// Timer testing
-	Timer* timer = new Timer();
-	timer->update();
 }
 
 //--------------------------------------------------------------
@@ -52,10 +41,9 @@ void ofApp::update() {
 		player->addLocation(ofPoint(Config::playerXSpeed * ofGetLastFrameTime(), 0));
 	}
 
+	// Stars
 	float now = ofGetElapsedTimef();
 	float interval = 0.1;
-
-	// Stars
 	if (now > lastStarSpawnTime + interval) {
 		lastStarSpawnTime = now;
 		float xPos = ofRandom(ofGetViewportWidth());
@@ -76,14 +64,12 @@ void ofApp::draw() {
 
 //--------------------------------------------------------------
 void ofApp::keyPressed(int key) {
+
 	if (key == GLFW_KEY_SPACE && !keys[GLFW_KEY_SPACE]) {
 		player->startFiring();
 	}
 
-	if (key == OF_KEY_CONTROL) {
-		world->logScene();
-	}
-
+	// Update key map
 	keys[key] = true;
 }
 
@@ -94,6 +80,7 @@ void ofApp::keyReleased(int key) {
 		player->stopFiring();
 	}
 
+	// Update key map
 	keys[key] = false;
 }
 
@@ -112,36 +99,36 @@ void ofApp::mouseDragged(int x, int y, int button) {
 }
 
 //--------------------------------------------------------------
-void ofApp::mousePressed(int x, int y, int button){
+void ofApp::mousePressed(int x, int y, int button) {
 
 }
 
 //--------------------------------------------------------------
-void ofApp::mouseReleased(int x, int y, int button){
+void ofApp::mouseReleased(int x, int y, int button) {
 
 }
 
 //--------------------------------------------------------------
-void ofApp::mouseEntered(int x, int y){
+void ofApp::mouseEntered(int x, int y) {
 
 }
 
 //--------------------------------------------------------------
-void ofApp::mouseExited(int x, int y){
+void ofApp::mouseExited(int x, int y) {
 
 }
 
 //--------------------------------------------------------------
-void ofApp::windowResized(int w, int h){
+void ofApp::windowResized(int w, int h) {
 
 }
 
 //--------------------------------------------------------------
-void ofApp::gotMessage(ofMessage msg){
+void ofApp::gotMessage(ofMessage msg) {
 
 }
 
 //--------------------------------------------------------------
-void ofApp::dragEvent(ofDragInfo dragInfo){ 
+void ofApp::dragEvent(ofDragInfo dragInfo) { 
 
 }

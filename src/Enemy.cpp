@@ -24,6 +24,5 @@ void Enemy::update() {
 void Enemy::collide(Actor* obj) {
 	if (obj && world && obj->getName() == "Projectile") {
 		world->deleteObject(this);
-		world->deleteObject(obj);
 	}
 }
