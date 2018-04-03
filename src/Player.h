@@ -14,6 +14,9 @@ public:
 	void stopFiring();
 
 	virtual void update();
+	virtual void collide(Actor*);
+
+	int getHealth();
 
 private:
 	void fireProjectile();
@@ -21,5 +24,7 @@ private:
 
 	Timer* timer;
 	TimerTask* fireTask;
+
+	int health;
 };
 

@@ -9,6 +9,8 @@ Player::Player() {
 	hasCollision = true;
 	zDepth = 3;
 
+	health = 5;
+
 	fireSoundPlayer.setVolume(0.5);
 	fireSoundPlayer.load("sounds/laser_1.wav");
 
@@ -44,4 +46,18 @@ void Player::update() {
 	if (location.x > ofGetViewportWidth()) location.x = ofGetViewportWidth();
 
 	timer->update();
+}
+
+void Player::collide(Actor* obj) {
+	if (obj && obj->getName() == "Enemy") {
+		health--;
+		world->deleteObject(obj);
+		if (health <= 0) {
+			// Game over
+		}
+	}
+}
+
+int Player::getHealth() {
+	return health;
 }

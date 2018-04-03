@@ -7,12 +7,15 @@
 
 //--------------------------------------------------------------
 void ofApp::setup() {
-
+	// Spawn world
 	world = new World();
 
 	// Spawn player
 	player = (Player*) world->addObject(new Player());
 	player->setLocation(ofPoint(ofGetViewportWidth() * 0.5, ofGetViewportHeight() - Config::playerYOffset));
+
+	// Spawn HUD
+	hud = new HUD(world, player);
 
 	// Automated enemy spawning
 	EnemySpawn* spawn = new EnemySpawn();
@@ -59,6 +62,10 @@ void ofApp::draw() {
 
 	if (world) {
 		world->draw();
+	}
+
+	if (hud) {
+		hud->draw();
 	}
 }
 

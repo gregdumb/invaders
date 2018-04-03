@@ -3,6 +3,7 @@
 #include "ofMain.h"
 
 #include "World.h"
+#include "HUD.h"
 #include "Player.h"
 #include "Enemy.h"
 #include "Timer.h"
@@ -28,6 +29,7 @@ class ofApp : public ofBaseApp {
 		void gotMessage(ofMessage msg);
 		
 		World * world;
+		HUD* hud;
 		Player* player;
 
 		ofPoint lastMousePosition;

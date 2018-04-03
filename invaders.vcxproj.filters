@@ -34,6 +34,9 @@
     <ClCompile Include="src\EnemySpawn.cpp">
       <Filter>src\Objects</Filter>
     </ClCompile>
+    <ClCompile Include="src\HUD.cpp">
+      <Filter>src\Engine</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="src">
@@ -81,6 +84,9 @@
       <Filter>src\Objects</Filter>
     </ClInclude>
     <ClInclude Include="src\Emitter.h">
+      <Filter>src\Engine</Filter>
+    </ClInclude>
+    <ClInclude Include="src\HUD.h">
       <Filter>src\Engine</Filter>
     </ClInclude>
   </ItemGroup>
