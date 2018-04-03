@@ -32,6 +32,10 @@ public:
 
 	Timer* timer;
 
+	// Score actions
+	void incrementScore();
+	int getScore();
+
 private:
 	// Holds all the objects we need to render
 	vector<Actor*> scene;
@@ -50,4 +54,7 @@ private:
 
 	// Time between frames
 	float deltaTime;
+
+	// How many players were killed
+	int score;
 };

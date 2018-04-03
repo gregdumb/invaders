@@ -23,6 +23,7 @@ void Enemy::update() {
 
 void Enemy::collide(Actor* obj) {
 	if (obj && world && obj->getName() == "Projectile") {
+		world->incrementScore();
 		world->deleteObject(this);
 	}
 }

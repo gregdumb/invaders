@@ -11,6 +11,8 @@ World::World() {
 	ofBackground(ofColor(42, 4, 64));
 
 	timer = new Timer();
+
+	score = 0;
 }
 
 void World::logScene() {
@@ -128,4 +130,16 @@ bool World::unsafeDeleteObject(Actor* toRemove) {
 
 float World::getDeltaTime() {
 	return deltaTime;
+}
+
+// **********************************************
+// ** Scoring
+
+void World::incrementScore() {
+	score++;
+	cout << "Current score: " << score << endl;
+}
+
+int World::getScore() {
+	return score;
 }
