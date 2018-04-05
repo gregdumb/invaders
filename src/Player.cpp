@@ -1,6 +1,7 @@
 #include "Player.h"
 #include "World.h"
 #include "Projectile.h"
+#include "Enemy.h"
 
 
 Player::Player() {
@@ -51,7 +52,7 @@ void Player::update() {
 void Player::collide(Actor* obj) {
 	if (obj && obj->getName() == "Enemy") {
 		health--;
-		world->deleteObject(obj);
+		static_cast<Enemy*>(obj)->explode();
 		if (health <= 0) {
 			// Game over
 		}

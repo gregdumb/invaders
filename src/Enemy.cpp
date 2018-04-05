@@ -1,5 +1,6 @@
 #include "Enemy.h"
 #include "World.h"
+#include "Emitter.h"
 
 
 Enemy::Enemy() {
@@ -21,9 +22,21 @@ void Enemy::update() {
 	}
 }
 
+void Enemy::explode() {
+
+	Emitter<EnemyFragment>* explosion = new Emitter<EnemyFragment>(world);
+	explosion->interval = 0;
+	explosion->burst = 5;
+	explosion->setLocation(this->location);
+	world->addObject(explosion);
+	explosion->start();
+
+	world->deleteObject(this);
+}
+
 void Enemy::collide(Actor* obj) {
 	if (obj && world && (obj->getName() == "Projectile")) {
 		world->incrementScore();
-		world->deleteObject(this);
+		this->explode();
 	}
 }
