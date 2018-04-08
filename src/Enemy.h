@@ -27,6 +27,7 @@ public:
 		hasCollision = false;
 		lifetime = 1000;
 		rotation = ofRandom(360);
+
 		//spawnTime = ofGetElapsedTimeMillis();
 	}
 

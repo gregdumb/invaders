@@ -34,6 +34,11 @@ void Enemy::explode() {
 	world->addObject(explosion);
 	explosion->start();
 
+	ofSoundPlayer* sound = new ofSoundPlayer();
+	sound->load("sounds/explosion.wav");
+	sound->setVolume(0.4);
+	sound->play();
+
 	world->deleteObject(this);
 }
 
