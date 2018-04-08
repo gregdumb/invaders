@@ -15,8 +15,17 @@ Timer::~Timer() {
 
 void Timer::update() {
 	for (TimerTask* task : tasks) {
-		if (task && task->lastCallTime + task->interval <= ofGetElapsedTimef()) {
+		// Repeating tasks
+		if (task && task->interval > 0 && task->lastCallTime + task->interval <= ofGetElapsedTimef()) {
 			task->call();
+		}
+		// One-time tasks
+		else if (task && task->delay > 0 && task->lastCallTime + task->delay <= ofGetElapsedTimef()) {
+			cout << "CALLING DELAYED TIMED FUNCTION" << endl;
+			task->call();
+			//task->delay = 0;
+			//task->interval = 0;
+			cout << "END OF LOOP LOOp" << endl;
 		}
 	}
 }

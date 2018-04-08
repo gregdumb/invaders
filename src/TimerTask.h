@@ -8,12 +8,13 @@
 //
 class TimerTask {
 public:
-	TimerTask(std::function<void()>, float interval);
+	TimerTask(std::function<void()>, float interval, float delay=0);
 
 	std::function<void()> func;
 
 	void call();
 
+	float delay;
 	float interval;
 	float lastCallTime;
 };

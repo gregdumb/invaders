@@ -73,4 +73,6 @@ private:
 	// Current level (controls rate of enemies)
 	int level;
 
+	// Timer for world's own use
+	Timer* worldTimer;
 };

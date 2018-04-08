@@ -2,6 +2,7 @@
 #include "World.h"
 #include "Timer.h"
 #include "EnemySpawn.h"
+#include "Player.h"
 
 // **********************************************
 // ** Constructors & Initialization
@@ -12,6 +13,7 @@ World::World() {
 	ofBackground(ofColor(42, 4, 64));
 
 	timer = new Timer();
+	worldTimer = new Timer();
 
 	score = 0;
 	spawn = new EnemySpawn();
@@ -48,6 +50,7 @@ void World::draw() {
 
 	updateCollision();
 	timer->update();
+	worldTimer->update();
 
 	// Update
 	for (Actor* obj : scene) {
@@ -148,6 +151,7 @@ void World::startGame() {
 	spawn->stopSpawn();
 	spawn->setRate(2);
 	spawn->startSpawn();
+
 }
 
 void World::incrementScore() {
@@ -156,18 +160,17 @@ void World::incrementScore() {
 
 	int newLevel = (int)(score / 5 + 1);
 
-	
-	if (newLevel > level) {
+	if (newLevel == 11) {
+		level = newLevel;
+		restartGame();
+	}
+	else if (newLevel > level) {
 		level = newLevel;
 		spawn->stopSpawn();
 		float newRate = (float)(2.f / level);
 		cout << "New rate: " << newRate << endl;
 		spawn->setRate(newRate);
 		spawn->startSpawn();
-	}
-
-	if (level == 6) {
-		stopGame();
 	}
 }
 
@@ -186,5 +189,9 @@ void World::restartGame() {
 			this->deleteObject(a);
 		}
 	}
-	startGame();
+	stopGame();
+
+	//auto fp = std::bind(&World::startGame, this);
+	//TimerTask* restart = new TimerTask(fp, 0, 3);
+	//worldTimer->addTask(restart);
 }

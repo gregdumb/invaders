@@ -18,7 +18,7 @@ Projectile::~Projectile() {
 void Projectile::update() {
 	Actor::update();
 
-	if (location.y < 50) {
+	if (location.y < 0) {
 		world->deleteObject(this);
 	}
 }

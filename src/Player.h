@@ -17,6 +17,7 @@ public:
 	virtual void collide(Actor*);
 
 	int getHealth();
+	int health;
 
 private:
 	void fireProjectile();
@@ -24,7 +25,5 @@ private:
 
 	Timer* timer;
 	TimerTask* fireTask;
-
-	int health;
 };
 

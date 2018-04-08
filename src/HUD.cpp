@@ -30,7 +30,7 @@ void HUD::draw() {
 	font->drawString(levelStr, 20, 100);
 
 	// Show WIN screen
-	if (world->getLevel() >= 6) {
+	if (world->getLevel() >= 11) {
 		ofPoint loc = ofPoint(
 			ofGetViewportWidth() * 0.5 - winImg.getWidth() * 0.5,
 			100

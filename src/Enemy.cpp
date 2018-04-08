@@ -17,7 +17,7 @@ Enemy::~Enemy() {
 void Enemy::update() {
 	Actor::update();
 
-	if (location.y > ofGetViewportHeight() - 50) {
+	if (location.y > ofGetViewportHeight()) {
 		world->deleteObject(this);
 	}
 }
