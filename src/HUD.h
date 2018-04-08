@@ -15,5 +15,10 @@ public:
 private:
 	World* world;
 	Player* player;
+
+	ofImage winImg;
+	ofImage loseImg;
+
+	ofTrueTypeFont* font;
 };
 
