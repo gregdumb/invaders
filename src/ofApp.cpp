@@ -18,9 +18,9 @@ void ofApp::setup() {
 	hud = new HUD(world, player);
 
 	// Automated enemy spawning
-	EnemySpawn* spawn = new EnemySpawn();
+	/*EnemySpawn* spawn = new EnemySpawn();
 	spawn->setWorld(world);
-	spawn->startSpawn();
+	spawn->startSpawn();*/
 
 	// Spawn some stars
 	lastStarSpawnTime = 0;
@@ -32,6 +32,8 @@ void ofApp::setup() {
 		Star* star = (Star*)world->addObject(new Star(speed));
 		star->setLocation(ofPoint(xPos, yPos));
 	}
+
+	world->startGame();
 }
 
 //--------------------------------------------------------------

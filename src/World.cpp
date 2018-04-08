@@ -1,6 +1,7 @@
 
 #include "World.h"
 #include "Timer.h"
+#include "EnemySpawn.h"
 
 // **********************************************
 // ** Constructors & Initialization
@@ -13,6 +14,8 @@ World::World() {
 	timer = new Timer();
 
 	score = 0;
+	spawn = new EnemySpawn();
+	spawn->setWorld(this);
 }
 
 void World::logScene() {
@@ -133,13 +136,55 @@ float World::getDeltaTime() {
 }
 
 // **********************************************
-// ** Scoring
+// ** Scoring/Game
+
+void World::stopGame() {
+	spawn->stopSpawn();
+}
+
+void World::startGame() {
+	score = 0;
+	level = 1;
+	spawn->stopSpawn();
+	spawn->setRate(2);
+	spawn->startSpawn();
+}
 
 void World::incrementScore() {
 	score++;
 	cout << "Current score: " << score << endl;
+
+	int newLevel = (int)(score / 5 + 1);
+
+	
+	if (newLevel > level) {
+		level = newLevel;
+		spawn->stopSpawn();
+		float newRate = (float)(2.f / level);
+		cout << "New rate: " << newRate << endl;
+		spawn->setRate(newRate);
+		spawn->startSpawn();
+	}
+
+	if (level == 6) {
+		stopGame();
+	}
 }
 
 int World::getScore() {
 	return score;
+}
+
+int World::getLevel() {
+	return level;
+}
+
+void World::restartGame() {
+	for (Actor* a : scene) {
+		string name = a->getName();
+		if (name != "Player" && name != "Star" && name != "EnemySpawn") {
+			this->deleteObject(a);
+		}
+	}
+	startGame();
 }

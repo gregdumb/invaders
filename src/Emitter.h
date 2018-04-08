@@ -8,12 +8,14 @@ template<class A>
 class Emitter : public Actor {
 public:
 	Emitter(World* world);
+	~Emitter();
 
 	void start();
 	void stop();
 
 	float interval;
-	ofPoint initialVelocity;
+	ofPoint initialVelocityMin;
+	ofPoint initialVelocityMax;
 
 	int burst;
 
@@ -30,16 +32,42 @@ Emitter<A>::Emitter(World* world) {
 	this->world = world;
 	interval = 1;
 	burst = 1;
-	initialVelocity = ofPoint(0, 0);
+	initialVelocityMin = ofPoint(0, 0);
+	initialVelocityMax = ofPoint(0, 0);
+}
+
+template<class A>
+Emitter<A>::~Emitter() {
+	cout << "Emitter destroyed" << endl;
 }
 
 template<class A>
 void Emitter<A>::emit() {
-	A* emitted = new A();
-	emitted->setWorld(world);
-	emitted->setLocation(location);
-	emitted->setVelocity(initialVelocity.x, initialVelocity.y);
-	world->addObject(emitted);
+	if (burst < 1) return;
+
+	for (int i = 0; i < burst; i++) {
+		A* emitted = new A();
+		emitted->setWorld(world);
+		emitted->setLocation(location);
+
+		// Randomized velocity
+		float minX = initialVelocityMin.x;
+		float minY = initialVelocityMin.y;
+		float maxX = initialVelocityMax.x;
+		float maxY = initialVelocityMax.y;
+
+		float randX = ofRandom(1);
+		float randY = ofRandom(1);
+
+		float diffX = maxX - minX;
+		float diffY = maxY - minY;
+
+		float x = minX + diffX * randX;
+		float y = minY + diffY * randY;
+
+		emitted->setVelocity(x, y);
+		world->addObject(emitted);
+	}
 }
 
 template<class A>
@@ -50,7 +78,7 @@ void Emitter<A>::start() {
 	}
 	else {
 		emit();
-		destroy();
+		this->lifetime = 100;
 	}
 	
 }

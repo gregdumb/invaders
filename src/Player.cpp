@@ -55,6 +55,7 @@ void Player::collide(Actor* obj) {
 		static_cast<Enemy*>(obj)->explode();
 		if (health <= 0) {
 			// Game over
+			world->restartGame();
 		}
 	}
 }

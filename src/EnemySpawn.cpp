@@ -1,18 +1,31 @@
 #include "EnemySpawn.h"
 #include "World.h"
-#include "Timer.h"
 #include "Enemy.h"
+#include "Timer.h"
 
 EnemySpawn::EnemySpawn() {
+	name = "EnemySpawn";
+	rate = 1.f;
 }
 
 EnemySpawn::~EnemySpawn() {
 }
 
+void EnemySpawn::setRate(float newRate) {
+	this->rate = newRate;
+}
+
 void EnemySpawn::startSpawn() {
 	if (world) {
 		auto fp = bind(&EnemySpawn::spawnEnemy, this);
-		world->timer->createTask(fp, 1);
+		task = new TimerTask(fp, rate);
+		world->timer->addTask(task);
+	}
+}
+
+void EnemySpawn::stopSpawn() {
+	if (world && task) {
+		world->timer->removeTask(task);
 	}
 }
 

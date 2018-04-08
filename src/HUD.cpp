@@ -16,8 +16,10 @@ HUD::~HUD() {
 void HUD::draw() {
 
 	string scoreStr = "Score: " + to_string(world->getScore());
-	string levelStr = "Lives: " + to_string(player->getHealth());
+	string healthStr = "Lives: " + to_string(player->getHealth());
+	string levelStr = "Level: " + to_string(world->getLevel());
 
 	ofDrawBitmapString(scoreStr, ofPoint(10, 20));
-	ofDrawBitmapString(levelStr, ofPoint(10, 40));
+	ofDrawBitmapString(healthStr, ofPoint(10, 40));
+	ofDrawBitmapString(levelStr, ofPoint(10, 60));
 }

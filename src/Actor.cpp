@@ -14,6 +14,8 @@ Actor::Actor() {
 
 	hasCollision = false;
 	zDepth = 1;
+
+	spawntime = ofGetElapsedTimeMillis();
 }
 
 Actor::~Actor() {
@@ -36,6 +38,10 @@ string Actor::getName() {
 
 void Actor::update() {
 	updateVelocity();
+
+	if (lifetime > 0 && world && lifetime + spawntime <= ofGetElapsedTimeMillis()) {
+		world->deleteObject(this);
+	}
 }
 
 void Actor::draw() {

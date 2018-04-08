@@ -50,6 +50,9 @@ public:
 
 	string getName();
 
+	// If zero, lives forever
+	float lifetime;
+
 protected:
 	// Reference to the world
 	World* world;
@@ -73,7 +76,9 @@ private:
 	ofPoint velocity;
 
 	// Updates the velocity
+	// (You could also call this the integrator)
 	void updateVelocity();
-	
+
+	float spawntime;
 };
 

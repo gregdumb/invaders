@@ -28,6 +28,9 @@ void Enemy::explode() {
 	explosion->interval = 0;
 	explosion->burst = 5;
 	explosion->setLocation(this->location);
+	explosion->initialVelocityMin = ofPoint(-200, -200);
+	explosion->initialVelocityMax = ofPoint(200, 200);
+
 	world->addObject(explosion);
 	explosion->start();
 

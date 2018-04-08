@@ -4,6 +4,7 @@
 #include "Actor.h"
 
 class Timer;
+class EnemySpawn;
 
 // World
 // Manages and draws the scene
@@ -35,6 +36,14 @@ public:
 	// Score actions
 	void incrementScore();
 	int getScore();
+	int getLevel();
+
+	// Start/stop spawning enemies
+	void stopGame();
+	void startGame();
+
+	// Reset game after game over
+	void restartGame();
 
 private:
 	// Holds all the objects we need to render
@@ -55,6 +64,13 @@ private:
 	// Time between frames
 	float deltaTime;
 
-	// How many players were killed
+	// Spawns enemies
+	EnemySpawn* spawn;
+
+	// How many enemies were killed
 	int score;
+
+	// Current level (controls rate of enemies)
+	int level;
+
 };

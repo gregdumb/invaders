@@ -1,5 +1,6 @@
 #pragma once
 #include "Actor.h"
+#include "TimerTask.h"
 
 // EnemySpawn
 // Handles spawning enemies
@@ -10,8 +11,13 @@ public:
 	~EnemySpawn();
 
 	void startSpawn();
+	void stopSpawn();
+
+	void setRate(float newRate);
 
 private:
 	void spawnEnemy();
+	TimerTask* task;
+	float rate;
 };
 

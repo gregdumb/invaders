@@ -19,17 +19,22 @@ public:
 class EnemyFragment : public Actor {
 public:
 	EnemyFragment() {
-		setImage("textures/ship.png");
+
+		int randInt = (int)ofRandom(2.99);
+
+		setImage("textures/enemy-fragment-" + to_string(randInt) + ".png");
 		name = "EnemyFragment";
 		hasCollision = false;
-		spawnTime = ofGetElapsedTimeMillis();
+		lifetime = 1000;
+		rotation = ofRandom(360);
+		//spawnTime = ofGetElapsedTimeMillis();
 	}
 
-	void update() {
+	/*void update() {
 		if (ofGetElapsedTimeMillis() > spawnTime + 100) {
 			world->deleteObject(this);
 		}
-	}
+	}*/
 
 	float spawnTime;
 };
