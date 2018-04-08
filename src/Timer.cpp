@@ -1,10 +1,7 @@
+// Copyright Gregory Brisebois 4/8/2018
+
 #include "Timer.h"
 #include "Actor.h"
-
-
-void sample() {
-	cout << "Function got called" << endl;
-}
 
 Timer::Timer() {
 

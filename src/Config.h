@@ -1,9 +1,10 @@
+// Copyright Gregory Brisebois 4/8/2018
+
 #pragma once
 
-/**
-* Global game config variables
-*/
-
+// Config
+// Contains global config variables for the game
+//
 class Config {
 public:
 

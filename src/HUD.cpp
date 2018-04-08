@@ -1,7 +1,8 @@
+// Copyright Gregory Brisebois 4/8/2018
+
 #include "HUD.h"
 #include "World.h"
 #include "Player.h"
-
 
 HUD::HUD(World* w, Player* p) {
 

@@ -1,3 +1,4 @@
+// Copyright Gregory Brisebois 4/8/2018
 
 #include "World.h"
 #include "Timer.h"

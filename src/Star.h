@@ -1,3 +1,5 @@
+// Copyright Gregory Brisebois 4/8/2018
+
 #pragma once
 #include "Actor.h"
 

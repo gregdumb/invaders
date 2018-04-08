@@ -1,9 +1,14 @@
+// Copyright Gregory Brisebois 4/8/2018
+
 #pragma once
 
 #include "Actor.h"
 #include "World.h"
 #include "Timer.h"
 
+// Emitter
+// Emits actors (particles) at regular intervals
+//
 template<class A>
 class Emitter : public Actor {
 public:

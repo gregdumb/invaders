@@ -1,8 +1,9 @@
+// Copyright Gregory Brisebois 4/8/2018
+
 #include "Player.h"
 #include "World.h"
 #include "Projectile.h"
 #include "Enemy.h"
-
 
 Player::Player() {
 	name = "Player";

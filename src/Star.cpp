@@ -1,7 +1,7 @@
+// Copyright Gregory Brisebois 4/8/2018
+
 #include "Star.h"
 #include "World.h"
-
-
 
 Star::Star(float speed) {
 	this->speed = speed;

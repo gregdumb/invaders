@@ -1,6 +1,6 @@
+// Copyright Gregory Brisebois 4/8/2018
+
 #include "TimerTask.h"
-
-
 
 TimerTask::TimerTask(std::function<void()> newFunc, float interval, float delay) {
 	func = newFunc;

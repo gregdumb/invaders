@@ -1,9 +1,13 @@
+// Copyright Gregory Brisebois 4/8/2018
+
 #pragma once
 #include "ofMain.h"
 
 class World;
 class Player;
 
+// HUD
+// Displays informational text on screen for the player
 class HUD
 {
 public:

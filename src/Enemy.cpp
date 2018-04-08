@@ -1,7 +1,8 @@
+// Copyright Gregory Brisebois 4/8/2018
+
 #include "Enemy.h"
 #include "World.h"
 #include "Emitter.h"
-
 
 Enemy::Enemy() {
 	setImage("textures/enemy.png");

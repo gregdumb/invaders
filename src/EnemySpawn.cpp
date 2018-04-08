@@ -1,3 +1,5 @@
+// Copyright Gregory Brisebois 4/8/2018
+
 #include "EnemySpawn.h"
 #include "World.h"
 #include "Enemy.h"

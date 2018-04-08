@@ -1,7 +1,8 @@
+// Copyright Gregory Brisebois 4/8/2018
+
 #include "Projectile.h"
 #include "World.h"
 #include "Config.h"
-
 
 Projectile::Projectile() {
 	setImage("textures/projectile.png");
@@ -10,7 +11,6 @@ Projectile::Projectile() {
 
 	setVelocity(0, -1 * Config::playerProjectileSpeed);
 }
-
 
 Projectile::~Projectile() {
 }
